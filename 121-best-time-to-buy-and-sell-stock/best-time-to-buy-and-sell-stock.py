@@ -4,10 +4,9 @@ class Solution:
         scout=1
         highest=0
 
-        while scout != len(prices):
-            if prices[res]<prices[scout]:
-                highest=max(prices[scout]-prices[res],highest)
-                
+        while scout<len(prices):
+            if prices[scout]>prices[res]:
+                highest=max(highest,prices[scout]-prices[res])
             else:
                 res=scout
             scout += 1
