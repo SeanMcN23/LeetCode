@@ -2,14 +2,12 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         map={}
 
-        for ind, num in enumerate(nums):
-            print(num,ind)
-           
-            if target-num in map:
-                
-                return ind,map[target-num]
+        for index,x in enumerate(nums):
+            if target-x in map:
+                return index,map[target-x]
             else:
-                map[num]=ind
+                map[x]=index
+        
                
            
        
