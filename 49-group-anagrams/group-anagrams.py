@@ -5,7 +5,7 @@ class Solution:
         map=defaultdict(list)
         # so lets think and build the logic upon this, cause its practically the same, just slighly differnet
         for s in strs:
-            count= [0]*26 # for each letter in alphabet
+            count=[0]*26
             for c in s:
                 count[ord(c)-ord("a")] += 1
             map[tuple(count)].append(s)
