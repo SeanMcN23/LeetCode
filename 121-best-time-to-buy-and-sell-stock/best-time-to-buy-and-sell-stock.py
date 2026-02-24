@@ -6,13 +6,15 @@ class Solution:
         highest=0
 
         while scout != len(prices):
-            while prices[scout] < prices[res]:
+            while prices[res] > prices[scout]:
                 res += 1
-            if prices[scout]>prices[res]:
+            if prices[scout] > prices[res]:
                 highest=max(highest,prices[scout]-prices[res])
-                
             scout += 1
         return highest
+
+        
+
 
 
 
