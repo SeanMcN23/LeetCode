@@ -6,6 +6,7 @@ class Solution:
         for index,x in enumerate(nums):
             ans[index]=prefix
             prefix *= x
+        
         postfix=1
         for index,x in reversed(list(enumerate(nums))):
             ans[index] *= postfix
