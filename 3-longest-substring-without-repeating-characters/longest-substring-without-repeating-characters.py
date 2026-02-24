@@ -5,7 +5,7 @@ class Solution:
         right=0
         mySet=set()
         res=0
-
+        #im thinking sliding window approach, so lets go with that
         for right in range(len(s)):
             while s[right] in mySet:
                 mySet.remove(s[left])
@@ -13,10 +13,4 @@ class Solution:
             mySet.add(s[right])
             res=max(res,len(mySet))
         return res
-
-
-
-           
-
-
-        
+       
