@@ -5,6 +5,7 @@ class Solution:
         res=0
         highest=0
 
+        
         while scout != len(prices):
             while prices[res] > prices[scout]:
                 res += 1
@@ -12,6 +13,7 @@ class Solution:
                 highest=max(highest,prices[scout]-prices[res])
             scout += 1
         return highest
+
 
         
 
