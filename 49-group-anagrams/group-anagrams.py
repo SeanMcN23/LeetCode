@@ -4,13 +4,13 @@ class Solution:
         #last time we did a double hashmap and basically returned that, but this time dont really have that luxury i dont believe
         map=defaultdict(list)
         # so lets think and build the logic upon this, cause its practically the same, just slighly differnet
-        for s in strs:
-            count=[0]*26
-            for c in s:
-                count[ord(c)-ord("a")] += 1
-            map[tuple(count)].append(s)
+        
+        for word in strs:
+            lst= [0]*26 # this represents is the make up of what we wish to store
+            for c in word:
+                lst[ord(c)-ord('a')] += 1
+            map[tuple(lst)].append(word)
         return list(map.values())
-         
 
 
 
