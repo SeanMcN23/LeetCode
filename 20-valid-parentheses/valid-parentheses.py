@@ -1,20 +1,33 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-         #i need a stack but i also need a map of what im looking for
-         
-         stack=[]
-         closeToOpen={")":"(","]":"[","}":"{"}
 
-         for c in s:
-            if c in closeToOpen:
-                if stack and stack[-1] == closeToOpen[c]:
+        #super fundamental stack question:
+
+        stack=[]
+        # stack in python gotta be a list
+
+        closedToOpen= {")":'(', ']':'[', '}':'{' }
+
+        for bracket in s:
+
+            if bracket in closedToOpen and stack:
+                if stack[-1] == closedToOpen[bracket]:
                     stack.pop()
                 else:
                     return False
 
             else:
-                stack.append(c)
-         return True if not stack else False
+                stack.append(bracket)
+            
+        if not stack:
+            return True
+        else:
+            return False
+                   
+            
+            
+
+       
+
 
         
-
