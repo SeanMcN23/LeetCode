@@ -9,15 +9,14 @@ class Solution:
         self.res= 0
 
         def helper(curr):
-
-            if not curr:
+            if curr is None:
                 return 0
             
-            left= helper(curr.left)
+            left=helper(curr.left)
             right=helper(curr.right)
 
             self.res= max(self.res, left+right)
-            return 1+ max(left,right)
+            return max(left,right)+1
         helper(root)
         return self.res
-        
+
