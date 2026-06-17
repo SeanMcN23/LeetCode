@@ -2,16 +2,16 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         map={}
 
-        for index,curr in enumerate(nums):
-            num=target-curr
+        for index,num in enumerate(nums):
+            lookup=target-num
 
-            if num in map:
-                return [map[num],index]
-
+            if lookup in map:
+                return [map[lookup],index]
             
-            map[curr] = index
-        return -1
+            map[num]= index
 
+        return []
+      
             
             
 
