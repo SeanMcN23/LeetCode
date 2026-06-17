@@ -1,18 +1,22 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         #sliding window approach, need 2 pointers, one a scout, one is reserver
-        res, scout= 0,0 
+        res,sco=0,0
 
         highest=0
 
-        for scout in range(len(prices)):
-            while prices[res] > prices[scout]:
+        while sco < len(prices):
+
+            while prices[res] > prices[sco]:
                 res += 1
             
-            if prices[scout] > prices[res]:
-                highest=max(highest,prices[scout]-prices[res])
+            if prices[sco] > prices[res]:
+                highest=max(highest, prices[sco]-prices[res])
+            sco += 1
+            
         return highest
-        
+
+
 
 
 
