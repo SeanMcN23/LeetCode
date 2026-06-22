@@ -3,12 +3,13 @@ class Solution:
         l,r= 0, len(numbers)-1
 
         while l <= r:
+            curr= numbers[l] + numbers[r]
 
-            if target< numbers[l] + numbers[r]:
+            if target< curr:
                 r -= 1
-            if target > numbers[l] + numbers[r]:
+            if target > curr:
                 l += 1
-            if target == numbers[l] + numbers[r]:
+            if target == curr:
                 return [l+1,r+1]
         return []
 
