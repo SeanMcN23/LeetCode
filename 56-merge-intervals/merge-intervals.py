@@ -1,18 +1,18 @@
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        
+        intervals.sort(key=lambda i: i[0])
+        result= [intervals[0]]
+        # want result to be starting with the first interval in there, reason for it in the while
+        for start,end in intervals[1:]:
+            last_end=result[-1][1]
 
-        intervals.sort(key= lambda i: i[0])
-        output= [intervals[0]]
-
-        for start, end in intervals[1:]:
-            lastEnd= output[-1][1]
-
-            if lastEnd >= start:
-                output[-1][1]=max(end,lastEnd)
-            else:
-                output.append([start,end])
-        return output
+            if start <= last_end:
+                result[-1][1]=max(last_end,end)
             
+            else:
+                result.append([start,end])
+        return result
 
 
 
