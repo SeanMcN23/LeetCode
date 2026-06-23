@@ -3,15 +3,14 @@ class Solution:
 
         #last time we did a double hashmap and basically returned that, but this time dont really have that luxury i dont believe
 
-        map=defaultdict(list)
+        mylist= defaultdict(list)
 
         for word in strs:
             letters=[0]*26
-
             for c in word:
                 letters[ord(c)-ord('a')] += 1
-            map[tuple(letters)].append(word)
-        return list(map.values())
+            mylist[tuple(letters)].append(word)
+        return list(mylist.values())
 
         
             
