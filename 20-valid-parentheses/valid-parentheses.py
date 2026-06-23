@@ -1,26 +1,22 @@
 class Solution:
     def isValid(self, s: str) -> bool:
 
-        stack=[]
+        stack= []
 
-        closedToOpen= {')':'(', "]":"[", '}':'{'}
+        closedToOpen= { '}': '{' , ']' : '[' , ')':'('}
 
         for bracket in s:
+
             if bracket in closedToOpen:
                 if stack and stack[-1] == closedToOpen[bracket]:
                     stack.pop()
-                    
-
                 else:
                     return False
-            
-            
+
             else:
                 stack.append(bracket)
-       
-        if stack:
-            return False
-        return True
+        return True if not stack else False
+
 
         
             
