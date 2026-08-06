@@ -8,7 +8,7 @@ class Solution:
 
         for r in range(len(nums)):   
             sum += nums[r]
-            print(sum)
+           # print(sum)
 
             while sum >= target:
                 myMin=min(myMin,(r-l)+1)
